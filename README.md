@@ -1,43 +1,42 @@
 # -Orienta-o-a-Objetos-e-UML-Diagrama-o-de-Classes-do-iPhone
 
-UML -
 @startuml
 
-interface MusicPlayer {
-    + play(): void
-    + pause(): void
-    + selectMusic(musicName: String): void
+interface ReprodutorMusical {
+    + tocar(): void
+    + pausar(): void
+    + selecionarMusica(nomeMusica: String): void
 }
 
-interface Phone {
-    + call(phoneNumber: String): void
-    + answer(): void
-    + startVoiceMail(): void
+interface AparelhoTelefonico {
+    + ligar(numeroTelefonico: String): void
+    + atender(): void
+    + iniciarCorrreioVoz(): void
 }
 
-interface InternetBrowser {
-    + displayPage(url: String): void
-    + addNewTab(): void
-    + refreshPage(): void
+interface NavegadorMusical {
+    + exibirPagina(url: String): void
+    + adicionarNovaAba(): void
+    + atualizarPagina(): void
 }
 
 class IPhone {
     <<implements>>
-    MusicPlayer
+    ReprodutorMusical
     <<implements>>
-    Phone
+    AparelhoTelefonico
     <<implements>>
-    InternetBrowser
+    NavegadorMusical
 
-    + play(): void
-    + pause(): void
-    + selectMusic(musicName: String): void
-    + call(phoneNumber: String): void
-    + answer(): void
-    + startVoiceMail(): void
-    + displayPage(url: String): void
-    + addNewTab(): void
-    + refreshPage(): void
+    + tocar(): void
+    + pausar(): void
+    + selecionarMusica(nomeMusica: String): void
+    + ligar(numeroTelefonico: String): void
+    + atender(): void
+    + iniciarCorrreioVoz(): void
+    + exibirPagina(url: String): void
+    + adicionarNovaAba(): void
+    + atualizarPagina(): void
 }
 
 @enduml
